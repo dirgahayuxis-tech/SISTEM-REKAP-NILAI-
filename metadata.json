@@ -1,0 +1,8 @@
+{
+  "name": "Sistem Rekap Nilai Bahasa Arab - MTsN 2 Bulukumba",
+  "description": "Sistem manajemen nilai, absensi, dan jurnal guru terintegrasi untuk Kurikulum Merdeka dengan fitur AI Assistant.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": []
+}
