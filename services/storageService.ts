@@ -389,6 +389,9 @@ export const getStudents = (): Student[] => {
   return students.sort((a, b) => a.name.localeCompare(b.name));
 };
 
+// Alias for lowercase compatibility if needed
+export const getstudents = getStudents;
+
 export const getStudentsByClass = (classId: string): Student[] => {
   return getStudents().filter(s => s.classId === classId);
 };
