@@ -115,27 +115,27 @@ export const GradingSheet: React.FC = () => {
 
   return (
     <div>
-      <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4 no-print">
+      <div className="d-flex justify-content-between align-items-center mb-4 no-print">
         <div>
-          <h2 className="text-dark fw-bold mb-0">Input & Rekap Nilai</h2>
-          <p className="text-muted mb-0 small d-none d-sm-block">Kelola nilai Formatif, Sumatif, dan SAS Siswa</p>
+          <h2 className="text-dark fw-bold">Input & Rekap Nilai</h2>
+          <p className="text-muted mb-0">Kelola nilai Formatif, Sumatif, dan SAS Siswa</p>
         </div>
-        <div className="d-flex gap-2 align-items-center bg-white p-2 rounded shadow-sm border w-100 w-md-auto">
-            <span className="fw-bold text-secondary px-2 small">Kelas:</span>
+        <div className="d-flex gap-2 align-items-center bg-white p-2 rounded shadow-sm border">
+            <span className="fw-bold text-secondary px-2">Pilih Kelas:</span>
             <select 
-                className="form-select form-select-sm border-secondary fw-bold flex-grow-1"
+                className="form-select border-secondary fw-bold"
                 value={selectedClass}
                 onChange={(e) => setSelectedClass(e.target.value)}
-                style={{minWidth: '120px'}}
+                style={{minWidth: '150px'}}
             >
                 <option value="">-- Pilih --</option>
                 {classes.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
             </select>
 
              {selectedClass && (
-                <div className="d-flex align-items-center gap-2 border-start ps-2">
-                    {saveStatus === 'saving' && <span className="text-warning small fw-bold" style={{fontSize: '0.7rem'}}>⏳ Saving</span>}
-                    {saveStatus === 'saved' && <span className="text-success small fw-bold" style={{fontSize: '0.7rem'}}>✅ OK</span>}
+                <div className="d-flex align-items-center gap-2 border-start ps-3 ms-2">
+                    {saveStatus === 'saving' && <span className="text-warning small fw-bold">⏳ Menyimpan...</span>}
+                    {saveStatus === 'saved' && <span className="text-success small fw-bold">✅ Tersimpan</span>}
                 </div>
              )}
         </div>

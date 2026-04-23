@@ -216,19 +216,19 @@ export const JournalManager: React.FC = () => {
 
   return (
     <div>
-      <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4 no-print">
-        <h2 className="text-dark mb-0 fw-bold">Jurnal Mengajar Harian</h2>
-        <div className="d-flex gap-2 w-100 w-md-auto">
-            <button onClick={() => setShowForm(!showForm)} className={`btn ${showForm ? 'btn-secondary' : 'btn-success'} flex-grow-1 flex-md-grow-0`}>
+      <div className="d-flex justify-content-between align-items-center mb-4 no-print">
+        <h2 className="text-dark">Jurnal Mengajar Harian</h2>
+        <div className="d-flex gap-2">
+            <button onClick={() => setShowForm(!showForm)} className={`btn ${showForm ? 'btn-secondary' : 'btn-success'}`}>
                 {showForm ? 'Batal' : '+ Tulis Jurnal'}
             </button>
-            <div className="dropdown flex-grow-1 flex-md-grow-0">
-                <button className="btn btn-primary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
-                    📥 Backup
+            <div className="dropdown">
+                <button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    📥 Backup Data
                 </button>
-                <ul className="dropdown-menu dropdown-menu-end">
-                    <li><button className="dropdown-item" onClick={() => handleExport('excel')}>📊 Export Excel</button></li>
-                    <li><button className="dropdown-item" onClick={() => handleExport('word')}>📄 Export Word</button></li>
+                <ul className="dropdown-menu">
+                    <li><button className="dropdown-item" onClick={() => handleExport('excel')}>📊 Export Excel (Rapi)</button></li>
+                    <li><button className="dropdown-item" onClick={() => handleExport('word')}>📄 Export Word (Rapi)</button></li>
                     <li><button className="dropdown-item" onClick={() => handleExport('print')}>🖨️ Print / PDF</button></li>
                 </ul>
             </div>
@@ -304,24 +304,23 @@ export const JournalManager: React.FC = () => {
             <div key={entry.id} className="col-12">
                 <div className="card shadow-sm h-100 hover-shadow break-inside-avoid">
                     <div className="card-body">
-                        <div className="d-flex flex-column flex-sm-row justify-content-between align-items-start border-bottom pb-2 mb-2 gap-2">
+                        <div className="d-flex justify-content-between align-items-start border-bottom pb-2 mb-2">
                             <div>
-                                <h6 className="fw-bold text-success mb-1">{entry.topic}</h6>
-                                <small className="text-muted d-block" style={{fontSize: '0.7rem'}}>
-                                    {new Date(entry.date).toLocaleDateString('id-ID', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })} • 
-                                    Kelas: <span className="text-dark fw-bold">{classes.find(c => c.id === entry.classId)?.name || '?'}</span>
+                                <h5 className="fw-bold text-success mb-1">{entry.topic}</h5>
+                                <small className="text-muted">
+                                    {new Date(entry.date).toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })} • 
+                                    Kelas: {classes.find(c => c.id === entry.classId)?.name || '?'}
                                 </small>
                             </div>
-                            <span className="badge bg-light text-dark border small d-none d-sm-block">ID: {entry.id.slice(-4)}</span>
                         </div>
-                        <p className="card-text text-dark mb-3 small" style={{whiteSpace: 'pre-line'}}>
+                        <p className="card-text text-dark mb-3" style={{whiteSpace: 'pre-line'}}>
                             <strong>Kegiatan:</strong> {entry.activity}
                         </p>
-                        <div className="bg-light p-2 rounded d-flex flex-wrap gap-2 gap-sm-3 small mb-2">
-                            <span className="fw-bold text-success">H: {entry.attendanceSummary.hadir}</span>
-                            <span className="fw-bold text-info">I: {entry.attendanceSummary.izin}</span>
-                            <span className="fw-bold text-warning">S: {entry.attendanceSummary.sakit}</span>
-                            <span className="fw-bold text-danger">A: {entry.attendanceSummary.alfa}</span>
+                        <div className="bg-light p-2 rounded d-flex gap-3 small mb-2">
+                            <span className="fw-bold text-success">✅ H: {entry.attendanceSummary.hadir}</span>
+                            <span className="fw-bold text-info">ℹ️ I: {entry.attendanceSummary.izin}</span>
+                            <span className="fw-bold text-warning">🏥 S: {entry.attendanceSummary.sakit}</span>
+                            <span className="fw-bold text-danger">❌ A: {entry.attendanceSummary.alfa}</span>
                         </div>
                         {entry.notes && (
                             <div className="alert alert-warning py-1 px-2 small mb-0 fst-italic">

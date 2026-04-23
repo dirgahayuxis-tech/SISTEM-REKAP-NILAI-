@@ -144,31 +144,24 @@
         z-index: 15;
         background-color: #f8f9fa; /* Light gray background */
         border-right: 1px solid #dee2e6;
-        width: 40px;
-        min-width: 40px;
+        width: 50px;
+        min-width: 50px;
         text-align: center;
       }
 
       /* Kolom Nama (Sebelah Kolom Nomor) */
       .col-sticky-name {
         position: sticky;
-        left: 40px; /* Sesuai lebar kolom No */
+        left: 50px; /* Sesuai lebar kolom No */
         z-index: 15;
         background-color: #fff; /* Wajib putih agar tidak transparan */
         border-right: 3px double #adb5bd; /* Batas kanan lebih tegas */
-        box-shadow: 4px 0 5px -2px rgba(0,0,0,0.1); /* Efek bayangan saat digeser */
-        width: 150px;
-        min-width: 150px;
+        box-shadow: 4px 0 5px -2px rgba(0,0,0,0.2); /* Efek bayangan saat digeser */
+        width: 250px;
+        min-width: 250px;
         max-width: 250px;
         white-space: normal !important; /* Agar teks panjang turun ke bawah */
         word-wrap: break-word;
-      }
-
-      @media (min-width: 768px) {
-        .col-sticky-name {
-          width: 250px;
-          min-width: 250px;
-        }
       }
 
       /* Fix Z-Index untuk Header Sticky */
@@ -188,74 +181,13 @@
         font-weight: 500;
         background-color: #fff; 
         border: 1px solid #dee2e6;
-        min-width: 45px;
+        min-width: 50px;
       }
       .table-input:focus {
         background-color: #fff3cd; /* Kuning muda saat fokus */
         border-color: #ffc107;
         box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.25);
         transform: scale(1.05);
-      }
-
-      /* Responsive Adjustments */
-      @media (max-width: 991.98px) {
-        .sidebar {
-          width: 0;
-          transition: 0.3s;
-        }
-        .sidebar.show-mobile {
-          width: 280px !important;
-          z-index: 1050;
-        }
-      }
-
-      /* Custom scrollbar for table container */
-      .table-responsive::-webkit-scrollbar {
-        height: 8px;
-        width: 8px;
-      }
-      .table-responsive::-webkit-scrollbar-track {
-        background: #f1f1f1;
-      }
-      .table-responsive::-webkit-scrollbar-thumb {
-        background: #ced4da;
-        border-radius: 4px;
-      }
-      .table-responsive::-webkit-scrollbar-thumb:hover {
-        background: #adb5bd;
-      }
-
-      /* Card Grid adjustments */
-      .dashboard-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 1.5rem;
-      }
-
-      /* Helper for small text on mobile */
-      @media (max-width: 576px) {
-        .mobile-small {
-          font-size: 0.8rem;
-        }
-        .table-responsive {
-          max-height: 60vh !important;
-        }
-        .table-responsive::after {
-          content: "↔ Geser Tabel";
-          position: sticky;
-          right: 10px;
-          bottom: 10px;
-          background: rgba(0,0,0,0.6);
-          color: white;
-          padding: 2px 8px;
-          border-radius: 10px;
-          font-size: 0.6rem;
-          pointer-events: none;
-          z-index: 40;
-          display: block;
-          width: fit-content;
-          float: right;
-        }
       }
 
       /* Attendance Colors & Clean Select */
@@ -367,6 +299,6 @@
   <body>
     <div id="root"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script type="module" src="/src/index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
 </body>
 </html>

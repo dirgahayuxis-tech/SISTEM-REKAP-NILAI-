@@ -244,37 +244,37 @@ export const AttendanceSheet: React.FC = () => {
 
   return (
     <div>
-      <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4 no-print">
+      <div className="d-flex justify-content-between align-items-center mb-4 no-print">
         <div>
-          <h2 className="text-dark fw-bold mb-0">Absensi Siswa</h2>
-          <p className="text-muted mb-0 small d-none d-sm-block">Rekap kehadiran siswa per pertemuan</p>
+          <h2 className="text-dark fw-bold">Absensi Siswa</h2>
+          <p className="text-muted mb-0">Rekap kehadiran siswa per pertemuan</p>
         </div>
-        <div className="d-flex gap-2 align-items-center bg-white p-2 rounded shadow-sm border w-100 w-md-auto overflow-hidden">
-            <span className="fw-bold text-secondary px-2 small">Kelas:</span>
+        <div className="d-flex gap-2 align-items-center bg-white p-2 rounded shadow-sm border">
+            <span className="fw-bold text-secondary px-2">Pilih Kelas:</span>
             <select 
-                className="form-select form-select-sm border-secondary fw-bold flex-grow-1"
+                className="form-select border-secondary fw-bold"
                 value={selectedClass}
                 onChange={(e) => setSelectedClass(e.target.value)}
-                style={{minWidth: '100px'}}
+                style={{minWidth: '150px'}}
             >
                 <option value="">-- Pilih --</option>
                 {classes.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
             </select>
             
             {selectedClass && (
-                <div className="d-flex align-items-center gap-2 ps-2 border-start">
+                <div className="d-flex align-items-center gap-2 ps-3 border-start">
                     {/* Auto Save Status Indicator */}
-                    {saveStatus === 'saving' && <span className="text-warning fw-bold" style={{fontSize: '0.7rem'}}>⏳ Saving</span>}
-                    {saveStatus === 'saved' && <span className="text-success fw-bold" style={{fontSize: '0.7rem'}}>✅ OK</span>}
+                    {saveStatus === 'saving' && <span className="text-warning small fw-bold">⏳ Menyimpan...</span>}
+                    {saveStatus === 'saved' && <span className="text-success small fw-bold">✅ Tersimpan</span>}
 
                     <div className="dropdown">
-                        <button className="btn btn-outline-primary dropdown-toggle btn-sm ms-1" type="button" data-bs-toggle="dropdown" style={{fontSize: '0.75rem'}}>
-                            📥 Backup
+                        <button className="btn btn-outline-primary dropdown-toggle btn-sm ms-2" type="button" data-bs-toggle="dropdown">
+                            📥 Backup Data
                         </button>
-                        <ul className="dropdown-menu dropdown-menu-end">
-                            <li><button className="dropdown-item" onClick={() => handleExport('excel')}>📊 Excel</button></li>
-                            <li><button className="dropdown-item" onClick={() => handleExport('word')}>📄 Word</button></li>
-                            <li><button className="dropdown-item" onClick={() => handleExport('print')}>🖨️ Print</button></li>
+                        <ul className="dropdown-menu">
+                            <li><button className="dropdown-item" onClick={() => handleExport('excel')}>📊 Export Excel (Rapi)</button></li>
+                            <li><button className="dropdown-item" onClick={() => handleExport('word')}>📄 Export Word (Rapi)</button></li>
+                            <li><button className="dropdown-item" onClick={() => handleExport('print')}>🖨️ Print / PDF</button></li>
                         </ul>
                     </div>
                 </div>

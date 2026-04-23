@@ -44,9 +44,7 @@ export const ClassManager: React.FC = () => {
 
   return (
     <div>
-      <div className="d-flex justify-content-between align-items-center mb-4">
-        <h2 className="text-dark mb-0 fw-bold">Manajemen Kelas</h2>
-      </div>
+      <h2 className="mb-4 text-dark">Kelola Data Kelas</h2>
 
       <div className="row g-4">
         {/* Form */}

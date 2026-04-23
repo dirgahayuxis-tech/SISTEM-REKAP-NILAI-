@@ -171,60 +171,60 @@ export const Dashboard: React.FC = () => {
 
       {/* Info Cards Row 1 */}
       <div className="row g-3 mb-3">
-        <div className="col-sm-6 col-md-3">
+        <div className="col-md-3">
           <div className="card h-100 border-0 shadow-sm" style={{borderLeft: '4px solid #0f5132'}}>
-            <div className="card-body p-3">
+            <div className="card-body">
               <div className="d-flex justify-content-between align-items-center">
                   <div>
-                    <h6 className="card-title text-muted text-uppercase small mb-1" style={{fontSize: '0.7rem'}}>Total Kelas</h6>
+                    <h6 className="card-title text-muted text-uppercase small mb-1">Total Kelas</h6>
                     <h2 className="mb-0 fw-bold text-dark">{stats.totalClasses}</h2>
                   </div>
-                  <div className="bg-success bg-opacity-10 text-success p-2 p-md-3 rounded-circle">
+                  <div className="bg-success bg-opacity-10 text-success p-3 rounded-circle">
                     🏫
                   </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="col-sm-6 col-md-3">
+        <div className="col-md-3">
           <div className="card h-100 border-0 shadow-sm" style={{borderLeft: '4px solid #198754'}}>
-            <div className="card-body p-3">
+            <div className="card-body">
               <div className="d-flex justify-content-between align-items-center">
                   <div>
-                    <h6 className="card-title text-muted text-uppercase small mb-1" style={{fontSize: '0.7rem'}}>Total Siswa</h6>
+                    <h6 className="card-title text-muted text-uppercase small mb-1">Total Siswa</h6>
                     <h2 className="mb-0 fw-bold text-dark">{stats.totalStudents}</h2>
                   </div>
-                  <div className="bg-success bg-opacity-10 text-success p-2 p-md-3 rounded-circle">
+                  <div className="bg-success bg-opacity-10 text-success p-3 rounded-circle">
                     👨‍🎓
                   </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="col-sm-6 col-md-3">
+        <div className="col-md-3">
           <div className="card h-100 border-0 shadow-sm" style={{borderLeft: '4px solid #ffc107'}}>
-            <div className="card-body p-3">
+            <div className="card-body">
                <div className="d-flex justify-content-between align-items-center">
                   <div>
-                    <h6 className="card-title text-muted text-uppercase small mb-1" style={{fontSize: '0.7rem'}}>Rata-rata</h6>
+                    <h6 className="card-title text-muted text-uppercase small mb-1">Rata-rata Total</h6>
                     <h2 className="mb-0 fw-bold text-dark">{stats.averageScore}</h2>
                   </div>
-                  <div className="bg-warning bg-opacity-10 text-warning p-2 p-md-3 rounded-circle">
+                  <div className="bg-warning bg-opacity-10 text-warning p-3 rounded-circle">
                     📊
                   </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="col-sm-6 col-md-3">
+        <div className="col-md-3">
            <div className="card h-100 border-0 shadow-sm" style={{borderLeft: '4px solid #0dcaf0'}}>
-            <div className="card-body p-3">
+            <div className="card-body">
                <div className="d-flex justify-content-between align-items-center">
                   <div>
-                    <h6 className="card-title text-muted text-uppercase small mb-1" style={{fontSize: '0.7rem'}}>Ketuntasan</h6>
+                    <h6 className="card-title text-muted text-uppercase small mb-1">Ketuntasan</h6>
                     <h2 className="mb-0 fw-bold text-dark">{stats.passRate}%</h2>
                   </div>
-                  <div className="bg-info bg-opacity-10 text-info p-2 p-md-3 rounded-circle">
+                  <div className="bg-info bg-opacity-10 text-info p-3 rounded-circle">
                     ✅
                   </div>
               </div>
@@ -235,40 +235,40 @@ export const Dashboard: React.FC = () => {
 
       {/* Info Cards Row 2 (Details) */}
        <div className="row g-3 mb-4">
-          <div className="col-12 col-md-6">
+          <div className="col-md-6">
               <div className="card border-0 shadow-sm h-100 bg-success text-white" style={{backgroundImage: 'linear-gradient(45deg, #198754, #0f5132)'}}>
                   <div className="card-body d-flex justify-content-between align-items-center">
                       <div>
-                          <h6 className="opacity-75 mb-0 small">Nilai Tertinggi</h6>
-                          <div className="display-6 fw-bold">{stats.highestScore}</div>
+                          <h6 className="opacity-75 mb-0">Nilai Tertinggi</h6>
+                          <div className="display-5 fw-bold">{stats.highestScore}</div>
                       </div>
                       <div className="text-end">
-                           <h6 className="opacity-75 mb-0 small">Nilai Terendah</h6>
-                           <div className="display-6 fw-bold">{stats.lowestScore}</div>
+                           <h6 className="opacity-75 mb-0">Nilai Terendah</h6>
+                           <div className="display-5 fw-bold">{stats.lowestScore}</div>
                       </div>
                   </div>
               </div>
           </div>
-          <div className="col-12 col-md-6">
+          <div className="col-md-6">
               <div className="card border-0 shadow-sm h-100">
-                  <div className="card-body p-3">
-                      <h6 className="text-muted fw-bold mb-2 small">Informasi Kurikulum</h6>
-                      <div className="row g-2 text-center">
-                          <div className="col-3 border-end">
-                              <small className="text-muted d-block" style={{fontSize: '0.65rem'}}>KKM</small>
-                              <strong className="text-dark small">{KKM}</strong>
+                  <div className="card-body">
+                      <h6 className="text-muted fw-bold mb-3">Informasi Kurikulum</h6>
+                      <div className="d-flex gap-4 text-center">
+                          <div className="flex-grow-1 border-end">
+                              <small className="text-muted d-block">KKM</small>
+                              <strong className="fs-5 text-dark">{KKM}</strong>
                           </div>
-                          <div className="col-3 border-end">
-                              <small className="text-muted d-block" style={{fontSize: '0.65rem'}}>Formatif</small>
-                              <strong className="text-dark small">{WEIGHTS.FORMATIF * 100}%</strong>
+                          <div className="flex-grow-1 border-end">
+                              <small className="text-muted d-block">Bobot Formatif</small>
+                              <strong className="fs-5 text-dark">{WEIGHTS.FORMATIF * 100}%</strong>
                           </div>
-                          <div className="col-3 border-end">
-                              <small className="text-muted d-block" style={{fontSize: '0.65rem'}}>Sumatif</small>
-                              <strong className="text-dark small">{WEIGHTS.SUMATIF * 100}%</strong>
+                          <div className="flex-grow-1 border-end">
+                              <small className="text-muted d-block">Bobot Sumatif</small>
+                              <strong className="fs-5 text-dark">{WEIGHTS.SUMATIF * 100}%</strong>
                           </div>
-                           <div className="col-3">
-                              <small className="text-muted d-block" style={{fontSize: '0.65rem'}}>SAS</small>
-                              <strong className="text-dark small">{WEIGHTS.SAS * 100}%</strong>
+                           <div className="flex-grow-1">
+                              <small className="text-muted d-block">Bobot SAS</small>
+                              <strong className="fs-5 text-dark">{WEIGHTS.SAS * 100}%</strong>
                           </div>
                       </div>
                   </div>

@@ -229,15 +229,15 @@ export const StudentManager: React.FC = () => {
 
   return (
     <div>
-      <div className="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 mb-4 no-print">
-         <h2 className="text-dark mb-0 fw-bold">Data Siswa</h2>
-         <div className="dropdown w-100 w-sm-auto">
-            <button className="btn btn-primary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+      <div className="d-flex justify-content-between align-items-center mb-4 no-print">
+         <h2 className="text-dark">Data Siswa</h2>
+         <div className="dropdown">
+            <button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
                 📥 Backup Data
             </button>
-            <ul className="dropdown-menu dropdown-menu-end">
-                <li><button className="dropdown-item" onClick={() => handleExport('excel')}>📊 Export Excel</button></li>
-                <li><button className="dropdown-item" onClick={() => handleExport('word')}>📄 Export Word</button></li>
+            <ul className="dropdown-menu">
+                <li><button className="dropdown-item" onClick={() => handleExport('excel')}>📊 Export Excel (Rapi)</button></li>
+                <li><button className="dropdown-item" onClick={() => handleExport('word')}>📄 Export Word (Rapi)</button></li>
                 <li><button className="dropdown-item" onClick={() => handleExport('print')}>🖨️ Print / PDF</button></li>
             </ul>
         </div>
@@ -341,7 +341,7 @@ export const StudentManager: React.FC = () => {
                 </div>
              </div>
              
-              <div className="table-responsive">
+             <div className="table-responsive">
                 <table id="student-table" className="table table-hover table-striped mb-0 align-middle">
                     <thead className="table-light">
                         <tr>
@@ -373,7 +373,7 @@ export const StudentManager: React.FC = () => {
                         )}
                     </tbody>
                 </table>
-              </div>
+             </div>
              
              {/* Pagination */}
              {totalPages > 1 && (
